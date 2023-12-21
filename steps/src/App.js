@@ -11,15 +11,15 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((currentStep) => currentStep - 1);
   }
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((currentStep) => currentStep + 1);
   }
 
   function handleIsOpen() {
-    setIsOpen(!isOpen);
+    setIsOpen((currentIsOpen) => !currentIsOpen);
   }
 
   return (
