@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// Challenge: https://codesandbox.io/p/sandbox/crimson-rgb-smd7rf?file=%2Fsrc%2Findex.js%3A46%2C24
-
 const pizzaData = [
   {
     name: "Focaccia",
