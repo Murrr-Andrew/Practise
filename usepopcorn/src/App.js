@@ -203,6 +203,17 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [selectedId]
   );
 
+  useEffect(function() {
+    if (!title) return;
+
+    document.title = `Movie | ${title}`;
+
+    // (Optional) Cleanup function
+    return function() {
+      document.title = "usePoporn";
+    }
+  }, [title]);
+
   return (
     <div className="details">
       {isLoading ? (
