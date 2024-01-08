@@ -365,7 +365,7 @@ function Main({ children }) {
   return <main className="main">{children}</main>;
 }
 
-const tempKEY = "52bfdea9";
+const KEY = "52bfdea9";
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -430,6 +430,7 @@ export default function App() {
       return;
     }
 
+    handleCloseMovie();
     fetchMovies();
 
     // cleanup function
