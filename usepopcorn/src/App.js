@@ -214,6 +214,23 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     }
   }, [title]);
 
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.code === "Escape") {
+          onCloseMovie();
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return function() {
+        document.removeEventListener("keydown", callback);
+      }
+    },
+    [onCloseMovie]
+  );
+
   return (
     <div className="details">
       {isLoading ? (
@@ -348,7 +365,7 @@ function Main({ children }) {
   return <main className="main">{children}</main>;
 }
 
-
+const tempKEY = "52bfdea9";
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -377,13 +394,16 @@ export default function App() {
   }
 
   useEffect(function() {
+    const controller = new AbortController();
+
     async function fetchMovies() {
       try {
         setIsLoading(true);
         setError("");
 
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+          { signal: controller.signal }
         );
 
         if (!res.ok) throw new Error("Something went wrong with fetching movies");
@@ -394,8 +414,11 @@ export default function App() {
 
         setMovies(data.Search);
         setIsLoading(false);
+        setError("");
       } catch (err) {
-        setError(err.message);
+        if (err.name !== "AbortError") {
+          setError(err.message);
+        }
       } finally {
         setIsLoading(false);
       }
@@ -408,6 +431,11 @@ export default function App() {
     }
 
     fetchMovies();
+
+    // cleanup function
+    return function() {
+      controller.abort();
+    }
   }, [query]);
 
   return (
