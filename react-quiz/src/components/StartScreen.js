@@ -1,8 +1,8 @@
-function StartScreen({ numbQuestions, dispatch }) {
+function StartScreen({ numQuestions, dispatch }) {
   return (
     <div className="start">
         <h2>Welcome to The Quiz!</h2>
-        <p>{numbQuestions} question to test your mastery</p>
+        <h3>{numQuestions} question to test your mastery</h3>
         <button
             className="btn btn-ui"
             onClick={() => dispatch({ type: "start" })}

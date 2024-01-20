@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className='app-header'>
+    <header className="app-header" style={{ justifyContent: "center" }}>
       <h1>The Quiz</h1>
     </header>
   );
