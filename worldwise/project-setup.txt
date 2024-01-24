@@ -1,5 +1,6 @@
 npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
 npm install react-router-dom@6
+npm install json-server
 
 "importCSSModule": {
     "prefix": "csm",
