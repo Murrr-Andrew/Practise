@@ -10,3 +10,23 @@ npm install react-datepicker
     "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
     "description": "Import CSS Module as `styles`"
   },
+
+To make eslint work:
+
+Needs to create file .eslintrc.json with content:
+
+{
+    "extends": "react-app"
+}
+
+Also, in vite.config.js needs to add:
+
+import eslint from "vite-plugin-eslint";
+
+and add to array => eslint()
+
+should like this:
+
+export default defineConfig({
+  plugins: [react(), eslint()],
+});
