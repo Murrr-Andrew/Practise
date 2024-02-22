@@ -1,0 +1,12 @@
+npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
+npm install react-router-dom@6
+npm install json-server
+npm install react-leaflet leaflet
+npm install react-datepicker
+
+"importCSSModule": {
+    "prefix": "csm",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
+    "description": "Import CSS Module as `styles`"
+  },
