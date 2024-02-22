@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 
-const BASE_URL = "http://localhost:3020";
+const BASE_URL = "http://localhost:3021";
 
 function App() {
   const [cities, setCities] = useState([]);
