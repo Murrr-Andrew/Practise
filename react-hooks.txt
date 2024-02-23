@@ -3,3 +3,6 @@ useEffect
 useContext
 useReducer
 useRef
+useParams
+useSearchParams
+useNavigate
