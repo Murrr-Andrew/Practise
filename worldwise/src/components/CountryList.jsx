@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import { useCities } from "../contexts/CitiesContext";
 
 import Spinner from "./Spinner";
@@ -35,10 +33,5 @@ function CountryList() {
     </ul>
   );
 }
-
-CountryList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-};
 
 export default CountryList;

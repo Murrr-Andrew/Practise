@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import { useCities } from "../contexts/CitiesContext";
 
 import Spinner from "./Spinner";
@@ -23,10 +21,5 @@ function CityList() {
     </ul>
   );
 }
-
-CityList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-};
 
 export default CityList;
