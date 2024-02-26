@@ -35,6 +35,54 @@
         "lat": "49.830896288288976",
         "lng": "24.049072265625"
       }
+    },
+    {
+      "id": "c686",
+      "cityName": "Amsterdam",
+      "country": "Netherlands (Kingdom of the)",
+      "emoji": "🇳🇱",
+      "date": "2024-02-26T19:51:39.852Z",
+      "notes": "Leaved in 2024 - 2025",
+      "position": {
+        "lat": "52.342051636387865",
+        "lng": "4.9053955078125"
+      }
+    },
+    {
+      "id": "0876",
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-02-26T19:55:40.534Z",
+      "notes": "Lived here in 2024",
+      "position": {
+        "lat": "40.39885600103786",
+        "lng": "-3.6968994140625004"
+      }
+    },
+    {
+      "id": "2280",
+      "cityName": "Monaco",
+      "country": "Monaco",
+      "emoji": "🇲🇨",
+      "date": "2024-02-26T19:56:33.935Z",
+      "notes": "Lived here in 2024",
+      "position": {
+        "lat": "43.71950494269109",
+        "lng": "7.426757812500001"
+      }
+    },
+    {
+      "id": "ef85",
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-02-26T19:56:58.736Z",
+      "notes": "Lived here in 2024",
+      "position": {
+        "lat": "48.84302835299519",
+        "lng": "2.3620605468750004"
+      }
     }
   ]
 }
