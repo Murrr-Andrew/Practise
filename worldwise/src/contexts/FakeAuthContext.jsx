@@ -7,6 +7,13 @@ const initialState = {
   isAuthenticated: false
 };
 
+const FAKE_USER = {
+  name: "Jack",
+  email: "jack@example.com",
+  password: "qwerty",
+  avatar: "https://i.pravatar.cc/100?u=zz",
+};
+
 function reducer(state, action) {
     switch(action.type) {
         case "login":
@@ -23,19 +30,22 @@ function AuthProvider({ children }) {
     const [{user, isAuthenticated}, dispatch] = useReducer(reducer, initialState);
 
     function login(email, password) {
-
+        if (email === FAKE_USER.email && password === FAKE_USER.password ) {
+            dispatch({ type: "login", payload: FAKE_USER });
+        }
     }
 
     function logout() {
-
+        dispatch({ type: "logout" });
     }
 
-    return <AuthContext.Provider>
+    return (
+      <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
         {children}
-    </AuthContext.Provider>
+      </AuthContext.Provider>
+    );
 }
 
-// eslint-disable-next-line
 function useAuth() {
     const context = useContext(AuthContext);
 
@@ -43,3 +53,5 @@ function useAuth() {
 
     return context;
 }
+
+export { AuthProvider, useAuth };
