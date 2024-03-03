@@ -6,3 +6,5 @@ useRef
 useParams
 useSearchParams
 useNavigate
+useMemo
+useCallback
