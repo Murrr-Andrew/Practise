@@ -8,3 +8,7 @@ useSearchParams
 useNavigate
 useMemo
 useCallback
+
+=== Redux ===
+useSelector
+useDispatch
