@@ -11,14 +11,12 @@ function BalanceDisplay({ balance }) {
   return <div className="balance">{formatCurrency(balance)}</div>;
 }
 
-// export default BalanceDisplay;
-
 // ============================================================
 // OLD WAY OF REDUX CONNECTING TO REACT
 function mapStateToProps(state) {
   return {
-    balance: state.account.balance
-  }
+    balance: state.account.balance,
+  };
 }
 
 export default connect(mapStateToProps)(BalanceDisplay);

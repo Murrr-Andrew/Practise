@@ -12,3 +12,7 @@ useCallback
 === Redux ===
 useSelector
 useDispatch
+
+
+npm i redux-thunk (middleware, Thunks are a standard approach for writing async logic in Redux apps)
+npm i redux-devtools-extension
