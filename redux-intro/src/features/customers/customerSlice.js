@@ -26,15 +26,8 @@ const customerSlice = createSlice({
         state.createdAt = action.payload.createdAt;
       },
     },
-    updateName: {
-      prepare(fullName) {
-        return {
-          payload: { fullName },
-        };
-      },
-      reducer(state, action) {
-        state.fullName = action.payload.fullName;
-      }
+    updateName(state, action) {
+        state.fullName = action.payload;
     },
   },
 });
