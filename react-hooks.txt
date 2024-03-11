@@ -8,11 +8,13 @@ useSearchParams
 useNavigate
 useMemo
 useCallback
+useLoaderData
+useNavigation
 
 === Redux ===
 useSelector
 useDispatch
-
+createSlice -> not a hook
 
 npm i redux-thunk (middleware, Thunks are a standard approach for writing async logic in Redux apps)
 npm i redux-devtools-extension
