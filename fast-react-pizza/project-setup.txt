@@ -6,6 +6,8 @@ npm install json-server
 npm install react-leaflet leaflet
 npm install react-datepicker
 
+npm i react-router-dom@6
+
 "importCSSModule": {
     "prefix": "csm",
     "scope": "javascript,typescript,javascriptreact",
