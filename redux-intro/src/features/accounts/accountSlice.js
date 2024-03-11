@@ -13,6 +13,7 @@ const accountSlice = createSlice({
   reducers: {
     deposit(state, action) {
       state.balance += action.payload;
+      state.isLoading = false;
     },
     withdraw(state, action) {
       state.balance -= action.payload;
@@ -32,17 +33,45 @@ const accountSlice = createSlice({
         state.loan = action.payload.amount;
         state.loanPurpose = action.payload.purpose;
         state.balance += action.payload.amount;
-      }
+      },
     },
     payLoan(state, action) {
       state.balance -= state.loan;
       state.loan = 0;
       state.loanPurpose = "";
+    },
+    convertingCurrency(state) {
+      state.isLoading = true;
     }
   },
 });
 
-export const { deposit, withdraw, requestLoan, payLoan } = accountSlice.actions;
+export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
+
+export function deposit(amount, currency) {
+  if (currency === "USD") {
+    return {
+      type: "account/deposit",
+      payload: amount,
+    };
+  }
+
+  // If we got return function in action creator so it mean that we use "thunk" for async request
+  return async function (dispatch, getState) {
+    dispatch({ type: "account/convertingCurrency" });
+
+    const res = await fetch(
+      `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
+    );
+    const data = await res.json();
+    const coverted = data.rates.USD;
+
+    dispatch({
+      type: "account/deposit",
+      payload: coverted,
+    });
+  };
+}
 
 export default accountSlice.reducer;
 
@@ -88,20 +117,20 @@ export default accountSlice.reducer;
 //   }
 
 //   // If we got return function in action creator so it mean that we use "thunk" for async request
-//   return async function (dispatch, getState) {
-//     dispatch({ type: "account/convertingCurrency" });
+  // return async function (dispatch, getState) {
+  //   dispatch({ type: "account/convertingCurrency" });
 
-//     const res = await fetch(
-//       `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
-//     );
-//     const data = await res.json();
-//     const coverted = data.rates.USD;
+  //   const res = await fetch(
+  //     `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
+  //   );
+  //   const data = await res.json();
+  //   const coverted = data.rates.USD;
 
-//     dispatch({
-//       type: "account/deposit",
-//       payload: coverted,
-//     });
-//   };
+  //   dispatch({
+  //     type: "account/deposit",
+  //     payload: coverted,
+  //   });
+  // };
 // }
 
 // export function withdraw(amount) {
