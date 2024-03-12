@@ -34,3 +34,8 @@ should like this:
 export default defineConfig({
   plugins: [react(), eslint()],
 });
+
+Tailwind
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
