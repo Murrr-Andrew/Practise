@@ -9,6 +9,7 @@ useNavigate
 useMemo
 useCallback
 useLoaderData
+useActionData
 useNavigation
 
 === Redux ===
@@ -19,3 +20,6 @@ createSlice -> not a hook
 npm i redux-thunk (middleware, Thunks are a standard approach for writing async logic in Redux apps)
 npm i redux-devtools-extension
 npm i @reduxjs/toolkit
+
+fetch data using loaders / useLoaderData
+write data using action / useActionData
