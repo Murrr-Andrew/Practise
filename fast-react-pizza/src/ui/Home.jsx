@@ -1,4 +1,4 @@
-import { CreateUser } from "../features/user/CreateUser";
+import CreateUser from "../features/user/CreateUser";
 
 function Home() {
   return (
