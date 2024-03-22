@@ -43,3 +43,7 @@ npx tailwindcss init -p
 npm install -D prettier prettier-plugin-tailwindcss
 
 Prettier -> command A + command K + command F
+
+Redux
+
+npm i @reduxjs/toolkit react-redux
