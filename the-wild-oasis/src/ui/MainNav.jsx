@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
-
 import styled from "styled-components";
-
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
@@ -16,7 +14,7 @@ const NavList = styled.ul`
   gap: 0.8rem;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
     display: flex;
@@ -60,34 +58,34 @@ function MainNav() {
     <nav>
       <NavList>
         <li>
-          <StyledLink to="/dashboard">
+          <StyledNavLink to="/dashboard">
             <HiOutlineHome />
             <span>Home</span>
-          </StyledLink>
+          </StyledNavLink>
         </li>
         <li>
-          <StyledLink to="/bookings">
+          <StyledNavLink to="/bookings">
             <HiOutlineCalendarDays />
             <span>Bookings</span>
-          </StyledLink>
+          </StyledNavLink>
         </li>
         <li>
-          <StyledLink to="/cabins">
+          <StyledNavLink to="/cabins">
             <HiOutlineHomeModern />
             <span>Cabins</span>
-          </StyledLink>
+          </StyledNavLink>
         </li>
         <li>
-          <StyledLink to="/users">
+          <StyledNavLink to="/users">
             <HiOutlineUsers />
             <span>Users</span>
-          </StyledLink>
+          </StyledNavLink>
         </li>
         <li>
-          <StyledLink to="/settings">
+          <StyledNavLink to="/settings">
             <HiOutlineCog6Tooth />
             <span>Settings</span>
-          </StyledLink>
+          </StyledNavLink>
         </li>
       </NavList>
     </nav>
