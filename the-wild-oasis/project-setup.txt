@@ -4,4 +4,9 @@ npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
 npm install styled-components
 npm install react-router-dom@6
 npm install react-icons
+npm install date-fns
 npm install --save @supabase/supabase-js
+npm install @tanstack/react-query@4
+npm install @tanstack/react-query-devtools@4
+npm install react-hot-toast
+npm install react-hook-form@7
