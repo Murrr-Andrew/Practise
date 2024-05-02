@@ -23,3 +23,12 @@ npm i @reduxjs/toolkit
 
 fetch data using loaders / useLoaderData
 write data using action / useActionData
+
+=== React Query ===
+useQuery
+useMutation
+useQueryClient
+
+=== React Hook Form ===
+
+useForm
